@@ -1,0 +1,102 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .main {
+            position: fixed;
+            top: 20px;
+            left: 300px;
+            width: 700px;
+            align-items: center;
+            border-radius: 5%;
+            padding: 20px;
+        }
+        div {
+            padding: 15px;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        input[type=submit] {
+            background-color: Black;
+            color: white;
+            cursor: pointer;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 5px;
+        }
+        h1 {
+            font-size: 40px;
+            color: white;
+            text-align: center;
+        }
+        h2 {
+            font-size: 30px;
+            color: DarkRed;
+        }
+        body {
+            background-image: url("{% static 'img4.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+            flex-grow: 1;
+        }
+        input[type=text] {
+            flex-grow: 2;
+            padding: 5px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+<body style="text-align:center;">
+    <div class="main">
+        <h1>Please enter the following values:</h1>
+        <form action="result">
+            <div class="row" style="background-color: lightblue;">
+                <p>Avg. Area Income</p>
+                    <input type="text" name="n1" style="left:100px">
+            </div>
+            <div class="row" style="background-color: pink;">
+                <p>Avg. Area House Age</p>
+                <input type="text" name="n2">
+            </div>
+            <div class="row" style="background-color: lightyellow;">
+                <p>Avg. Area Number of Rooms</p>
+                <input type="text" name="n3">
+            </div>
+            <div class="row" style="background-color: rgba(25, 99, 71, 0.5);">
+                <p>Avg. Area Number of Bedrooms</p>
+                <input type="text" name="n4">
+            </div>
+            <div class="row" style="background-color: rgba(180, 180, 180);">
+                <p>Avg. Area Population</p>
+                <input type="text" name="n5">
+            </div>
+                <input type="submit" value="PREDICT" style="text-align:center">
+        </form>
+        <div class="row">
+            <h2>{{result2}}</h2>
+        </div>
+    </div>
+</body>
+</html>
